@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCustomerRequest;
-use App\Models\Customer;
 use Illuminate\Http\Request;
 
-class CustomerController extends Controller
+class USerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +14,7 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('customers.index', compact('customers'));
+        return view('customers.index')
     }
 
     /**
@@ -26,7 +24,7 @@ class CustomerController extends Controller
      */
     public function create()
     {
-        return view('customers.create');
+        //
     }
 
     /**
@@ -35,10 +33,9 @@ class CustomerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateCustomerRequest $request)
+    public function store(Request $request)
     {
-        Customer::create($request->validated());
-
+        //
     }
 
     /**
@@ -49,10 +46,7 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        $customer = Customer::find($id);
-        if (empty($customer)) {
-        }
-        return view();
+        //
     }
 
     /**
@@ -63,10 +57,7 @@ class CustomerController extends Controller
      */
     public function edit($id)
     {
-        $customer = Customer::find($id);
-        if (empty($customer)) {
-        }
-        return view();
+        //
     }
 
     /**
@@ -89,9 +80,6 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        $customer = Customer::find($id);
-        if (empty($customer)) {
-        }
-        return $customer->destroy();
+        //
     }
 }
